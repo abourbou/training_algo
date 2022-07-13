@@ -3,8 +3,6 @@
 #include <string>
 #include <algorithm>
 
-//problem : https://leetcode.com/problems/add-two-numbers/
-
 void	print_list(ListNode *list)
 {
 	std::string number;

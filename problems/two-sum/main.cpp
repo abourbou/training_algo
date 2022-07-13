@@ -1,9 +1,6 @@
 #include "code.hpp"
 #include <iostream>
 
-//https://leetcode.com/problems/two-sum
-
-
 int	main(int argc, char **argv)
 {
 	(void)argc, (void)argv;

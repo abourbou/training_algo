@@ -1,6 +1,8 @@
 #include <vector>
 #include <map>
 
+//problem: https://leetcode.com/problems/two-sum
+
 int check_solution(std::multimap<int, int> &map_var, int diff)
 {
 	auto it = map_var.find(diff);
