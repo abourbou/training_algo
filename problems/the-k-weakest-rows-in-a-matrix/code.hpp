@@ -6,11 +6,6 @@ using namespace std;
 
 using duo = tuple<int, int> ;
 
-void    sort_weakest(vector<duo> &vec_weakest)
-{
-
-}
-
 class Solution {
 public:
     vector<int> kWeakestRows(vector<vector<int>>& mat, int k) {
