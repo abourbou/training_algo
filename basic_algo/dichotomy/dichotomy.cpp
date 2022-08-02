@@ -10,7 +10,7 @@ int	dichotomy(const std::vector<int> &array, int value, int low = 0, int high = 
 
 	while (low <= high)
 	{
-		int mid = (low + high) / 2;
+		long mid = ((long)low + (long)high) / 2;
 		if (array[mid] == value)
 			return mid;
 		else if (array[mid] < value)
@@ -56,4 +56,11 @@ bool	test_dichotomy(void)
 		return false;
 	std::cout << "everything is ok" << std::endl;
 	return true;
+}
+
+int	main(void)
+{
+	test_dichotomy();
+
+	return (0);
 }
