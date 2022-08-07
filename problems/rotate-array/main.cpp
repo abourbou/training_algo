@@ -14,7 +14,7 @@ int main(void)
 		cout << *it << ", ";
 	cout << endl;
 
-	Solution::rotate(vec, 3);
+	Solution::rotate(vec, 1);
 
 	for (auto it = vec.begin(); it != vec.end(); ++it)
 		cout << *it << ", ";

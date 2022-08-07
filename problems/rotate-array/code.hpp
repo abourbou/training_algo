@@ -5,7 +5,7 @@
 
 using namespace std;
 
-// solution in O(n - k) memory
+// solution in O(n - k) memory but quick
 
 // class Solution {
 // public:
@@ -19,25 +19,55 @@ using namespace std;
 // 	}
 // };
 
-void	partial_rotate(vector<int>& nums, int &start, int &k)
-{
-	static int size = nums.size();
-	int p = k - start;
-	int min = (p < k) ? p : k;
 
-	cout << "k : " << k << ", p : " << p << endl;
-	for (int i = start; i < start + min; ++i)
-		swap(nums[i], nums[i + p]);
-}
-
+//Solution in O(1) memory
 class Solution {
 public:
 	static void rotate(vector<int>& nums, int k)
 	{
-		int i;
-		k = nums.size() - k;
-		int end = nums.size() - 1;
 		
-		
+		int start = 0;
+		const int size = nums.size();
+		k %= size;
+		int dist = size - k;
+		int buffer;
+
+		while (k && dist)
+		{
+			if (k <= dist)
+			{
+				for (int i = 0; i < k; ++i)
+				{
+					buffer = nums[start + i];
+					nums[start + i] = nums[start + dist + i];
+					nums[start + dist + i] = buffer;
+				}
+				start += k;
+				dist -= k;
+			}
+			else
+			{
+				for (int i = 0; i < dist; ++i)
+				{
+					buffer = nums[start + i];
+					nums[start + i] = nums[start + dist + i];
+					nums[start + dist + i] = buffer;
+				}
+				start += dist;
+				k -= dist;
+			}
+		}
 	}
 };
+
+//optimal solution
+
+// class Solution {
+// public:
+//     void rotate(vector<int>& nums, int k) {
+//         k %=nums.size();
+//         reverse(nums.begin(), nums.end());
+//         reverse(nums.begin(), nums.begin()+k);
+//         reverse(nums.begin()+k, nums.end());
+//     }
+// };
